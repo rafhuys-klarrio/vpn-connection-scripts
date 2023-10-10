@@ -9,13 +9,13 @@ Use the `./dsh-vpn.sh` shell script for MacOS and Linux. This is a wrapper scrip
 - OpenVPN tested with [2.4.x - 3.0.0] (command: openvpn --version)
 - OpenSSL hard requirement >= 1.0.0 (command: openssl version)
 - stunnel tested with 5.44 and 5.56 (command: stunnel -version)
-- wget
 
 ## Notes
 
 - Requires the tenant to have opened the port **1194** if they are behind a firewall.
 - Requires the tenant to know the VPN password which can be retrieved through the DSH Console->Secrets
 - Requires the tenant to know the tenant name, environment on which it runs and what the DNS suffix is.
+- For platforms with releases >= DSH-65
 
 ## Set up
 
@@ -28,6 +28,7 @@ Use the `./dsh-vpn.sh` shell script for MacOS and Linux. This is a wrapper scrip
    - Tenant name (in lowercase)
    - Environment
    - DNS suffix
+   - Cluster DNS IP
    - VPN User [=admin]
    - VPN Password
 
@@ -57,9 +58,9 @@ vpn.<tenant>.marathon.mesos
 ;; QUESTION SECTION:
 ;vpn.<tenant>.marathon.mesos. IN A
 ;; ANSWER SECTION:
-vpn.<tenant>.marathon.mesos. 60 IN A 10.142.12.5
+vpn.<tenant>.marathon.mesos. 60 IN A 10.1.12.5
 ;; Query time: 67 msec
-;; SERVER: 198.51.100.1#53(198.51.100.1)
+;; SERVER: 172.20.0.10#53(172.20.0.10)
 ;; WHEN: Wed Aug 12 15:33:02 BST 2020
 ;; MSG SIZE rcvd: 58
 ```

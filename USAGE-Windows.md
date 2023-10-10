@@ -15,6 +15,7 @@ Use the `./dsh-vpn.ps1` powershell script for Windows. This is a wrapper script 
 - Requires the tenant to have opened the port **1194** if they are behind a firewall.
 - Requires the tenant to know the VPN password which can be retrieved through the DSH Console->Secrets
 - Requires the tenant to know the tenant name, environment on which it runs and what the DNS suffix is.
+- For platforms with releases >= DSH-65
 
 ## Set up
 
@@ -27,6 +28,7 @@ Use the `./dsh-vpn.ps1` powershell script for Windows. This is a wrapper script 
    - Tenant name (in lowercase)
    - Environment
    - DNS suffix
+   - Cluster DNS IP
    - VPN User [=admin]
    - VPN Password
 
